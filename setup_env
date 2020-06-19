@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Install pathogen
+#mkdir -p ~/.vim/autoload ~/.vim/bundle && \
+#curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Setup vimrc
+echo -e "
+syntax enable
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set number
+set nowrap
+set showcmd
+set wildmenu
+set showmatch
+set incsearch
+set list
+set listchars=eol:·
+set novisualbell
+
+filetype plugin indent on
+colorscheme desert
+execute pathogen#infect()
+command Nospace %s/\s\+$//g
+au BufEnter *.rb :let g:AutoPairs['|'] = '|'
+
+" > ~/.vimrc
+
+#sudo mkdir -p ~/.vim/bundle
+#
+#git clone git@github.com:jiangmiao/auto-pairs.git ~/.vim/bundle/auto-pairs
+#git clone git@github.com:tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+#git clone git@github.com:tpope/vim-rails.git ~/.vim/bundle/vim-rails && vim -u NONE -c "helptags vim-rails/doc" -c q
+#git clone git@github.com:MaxMEllon/vim-jsx-pretty.git /.vim/bundle/vim-jsx-pretty
+#git clone git@github.com:mattn/emmet-vim.git ~/.vim/bundle/emmet-vim
+#git clone git@github.com:elixir-editors/vim-elixir.git ~/.vim/bundle/vim-elixir
+#git clone git@github.com:tpope/vim-surround.git ~/.vim/bundle/vim-surround
+
+# Uncomment the next lines to install search plugin
+#brew install the_silver_searcher
+#git clone git@github.com:dyng/ctrlsf.vim.git ~/.vim/bundle/ctrlsf.vim
+#echo -e '
+#" Exclusive for Ctrslf
+#nmap <C-F>i <Plug>CtrlSFPrompt
+#vmap <C-F>i <Plug>CtrlSFVwordPath
+#
+#let g:ctrlsf_auto_focus = { "at": "done", "duration_less_than": 1000 }
+#' >> ~/.vimrc
